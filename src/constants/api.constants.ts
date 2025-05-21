@@ -32,9 +32,6 @@ export const messages={
 export const apiRoutes={
     AUTH:"/api/auth",
     PRODUCT:"/api/products",
-    CART:"/api/cart",
-    ORDER:"/api/orders",
-    DELIVERY_BOY:"/api/delivery-boy",
-    ADMIN:"/api/admin",
-    NOTIFICATION:"/api/notifications",
+    STOCK:"/api/stock",
+    BILL:"/api/bill",
 }

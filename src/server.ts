@@ -5,6 +5,11 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import ExpressMongoSanitize from "express-mongo-sanitize";
 import morgan from "morgan";
+import { apiRoutes } from "./constants/api.constants";
+import authRoutes from "./routes/auth.route";
+import productRoutes from "./routes/product.route";
+import stockRoutes from "./routes/stock.route";
+import billRoutes from "./routes/bill.route";
 
 connectDB();
 
@@ -70,6 +75,11 @@ app.use(ExpressMongoSanitize())
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 
 
+// -------------------- routes-------------------------------
+app.use(apiRoutes.AUTH, authRoutes);
+app.use(apiRoutes.PRODUCT, productRoutes);
+app.use(apiRoutes.STOCK, stockRoutes);
+app.use(apiRoutes.BILL, billRoutes);
 
 
 // -------------------- health check route-------------------------------
